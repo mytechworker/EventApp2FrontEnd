@@ -1,0 +1,60 @@
+.c-textarea {
+		padding: 15px;
+		box-shadow: none;
+		outline: none;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: 11px center;
+		background-color: #fff;
+		border: 1px solid #C7CDD8;
+		color: #222;
+		opacity: 1;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.2px;
+		text-transform: none;
+		transition: 0.4s;
+		border-radius: 4px;
+		resize: none;
+    font-family: "Red Hat Display", sans-serif;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: #B2BBCE;
+		}
+
+		&:disabled {
+			background: transparent;
+			pointer-events: none;
+			opacity: .4;
+		}
+
+		&--error {
+			border: 1px solid red;
+			background: rgba(255, 0, 0, .1);
+		}
+
+		&:focus, &:active {
+			outline: none;
+			box-shadow: none;
+		}
+
+		&__required {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			font-size: 16px;
+			color: red;
+		}
+	}
+
+	.error-text {
+		color: red;
+		position: absolute;
+		bottom: -15px;
+		font-size: 10px;
+		font-weight: 500;
+	}

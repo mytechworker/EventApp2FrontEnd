@@ -1,0 +1,197 @@
+.notifications {
+  position: fixed;
+  top: 84px;
+  right: 0;
+  z-index: 19;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  background: white;
+  height: calc(100vh - 84px);
+  width: 318px;
+  padding: 13px 0px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 17px;
+    h2 {
+      font-size: 16px;
+    }
+    .close {
+      cursor: pointer;
+    }
+  }
+  &__list {
+    overflow: auto;
+    height: calc(100vh - 150px);
+    /* width */
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #F2F2F2;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #4F4F4F;
+      border-radius:5px;
+    }
+
+    /* Handle on hover */
+    .notification {
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      position: relative;
+
+      &.not-read {
+        background: #edf6fc;
+        .notification__time {
+          color: #2f80ed;
+        }
+      }
+      &__image {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+        background-color: #979797;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.circle {
+          border-radius: 50%;
+        }
+        img {
+          width: auto;
+          height: 100%;
+        }
+        .bgEventDate {
+          position: absolute;
+          top: 0;
+          left: 0;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: white;
+            top: 0;
+            font-size: 36px;
+            line-height: 36px;
+            font-weight: 700;
+            font-family: "Roboto", sans-serif;
+          }
+          h5 {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: white;
+            top: 0;
+            font-size: 7px;
+            line-height: 7px;
+            text-align: center;
+            margin-top: 3px;
+            font-family: "Roboto", sans-serif;
+          }
+          img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+          }
+        }
+      }
+      &__name{
+        color:white;
+        font-size: 20px;
+        line-height: 30px;
+        text-transform: uppercase;
+        font-weight: 700
+      }
+      &__imageSmall {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #ffffff;
+        bottom: 0;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 4px;
+        position: absolute;
+        left: 46px;
+        background: white;
+        overflow: hidden;
+        z-index: 2;
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+      }
+      &__text {
+        flex-grow: 1;
+        padding: 0 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 226px;
+        .title {
+          display:flex;
+          font-size: 14px;
+          font-weight: 400;
+          color: #333;
+          font-family: "Red Hat Display", sans-serif;
+          line-height: 18px;
+          height:38px;
+          align-items: center;
+          margin-top:-5px;
+        }
+        .name {
+          font-size: 14px;
+          font-weight: 400;
+          color: #333;
+          font-family: "Red Hat Display", sans-serif;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height:20px;
+        }
+      }
+      &__info {
+        display: flex;
+        align-items: baseline;
+      }
+      &__time {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: "Red Hat Display", sans-serif;
+        color: #838384;
+        margin-right: 10px;
+        height:20px;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .notifications {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .notifications {
+    top: 65px;
+    z-index: 110;
+  }
+}

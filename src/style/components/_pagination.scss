@@ -1,0 +1,36 @@
+.pagination-wrap {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	box-sizing: border-box;
+	margin: 40px 0 0;
+	.pagin {
+		width: auto;
+		display: flex;
+		li {
+			margin: 0 0 0 5px;
+			&:first-of-type {
+				font-weight: 700;
+			}
+			&:last-of-type {
+				font-weight: 700;
+			}
+			a {
+				padding: 7px 10px 5px;
+				font-size: 16px;
+				line-height: 16px;
+				color: $dark;
+				border-radius: 5px;
+				font-weight: 400;
+			}
+		}
+		li.active {
+			a {
+				color: #fff;
+				background: $blue;
+				font-weight: 700;
+			}
+		}
+	}
+}

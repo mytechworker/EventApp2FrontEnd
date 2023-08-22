@@ -1,0 +1,31 @@
+@mixin respond-to($media) {
+	@if $media == max360 {
+		@media (max-width: 360px) {
+			@content
+		}
+	} @else if $media == max480 {
+		@media (max-width: 480px) {
+			@content
+		}
+	} @else if $media == max576 {
+		@media (max-width: 576px) {
+			@content
+		}
+	} @else if $media == max767 {
+		@media (max-width: 767px) {
+			@content
+		}
+	} @else if $media == max1024 {
+		@media (max-width: 1024px) {
+			@content
+		}
+	} @else if $media == max1368 {
+		@media (max-width: 1368px) {
+			@content
+		}
+	} @else if $media == max1440 {
+		@media (max-width: 1440px) {
+			@content
+		}
+	}
+}

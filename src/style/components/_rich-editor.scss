@@ -1,0 +1,163 @@
+.rich-editor {
+  border: 1px solid #c7cdd8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+
+  blockquote,
+  h1,
+  h2,
+  h3,
+  ol,
+  p,
+  pre,
+  ul {
+    margin: 1rem 0;
+  }
+
+  ol:first-child,
+  p:first-child,
+  ul:first-child {
+    margin-top: 0;
+  }
+
+  ol:last-child,
+  p:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  .message {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .editor__content {
+    word-break: break-word;
+    height: 87px;
+    overflow: auto;
+    padding: 12px;
+
+    * {
+      caret-color: currentColor;
+      outline: none;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    ol,
+    ul {
+      padding-left: 1rem;
+    }
+
+    li {
+      & > ol,
+      & > p,
+      & > ul {
+        margin: 0;
+      }
+    }
+  }
+
+  .menubar {
+    background: #e6ebf4;
+    transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &.is-hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &.is-focused {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: visibility 0.2s, opacity 0.2s;
+      transition: visibility 0.2s, opacity 0.2s;
+    }
+
+    button {
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .menububble__button {
+      margin-left: auto;
+      background: #e6ebf4;
+      border: 0;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .menububble__form {
+      display: flex;
+      margin-left: auto;
+    }
+
+    &__button {
+      font-weight: 700;
+      display: -webkit-inline-box;
+      display: inline-flex;
+      background: transparent;
+      border: 0;
+      color: #000;
+      padding: 0.2rem 0.5rem;
+      margin-right: 0.2rem;
+      border-radius: 3px;
+      font-size: 13.3333px;
+      cursor: pointer;
+
+      svg path {
+        stroke: red;
+      }
+
+      &:hover {
+        //background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      &.is-active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  @include respond-to(max1024) {
+    .menubar {
+      &__button {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include respond-to(max480) {
+    .menubar {
+      &__button {
+        &.button-undo {
+          display: none;
+        }
+        &.button-redo {
+          display: none;
+        }
+        &.button-strike {
+          display: none;
+        }
+      }
+    }
+  }
+
+}

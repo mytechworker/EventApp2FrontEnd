@@ -1,0 +1,39 @@
+	.form-group {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin-bottom: 20px;
+
+		&__label {
+			font-weight: 600;
+			font-size: 10px;
+			/*color: $blue;*/
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			width: 100%;
+			position: relative;
+			sup{
+				position: absolute;
+				top: -3px;
+				margin-left: 5px;
+				font-size: 12px;
+			}
+		}
+
+		&__field {
+			flex: 1 1 0%;
+		}
+
+		&__append {
+			padding: 0 10px;
+			display: flex;
+			align-items: center;
+			height: 44px;
+			background: #E2E6ED;
+			color: #697783;
+			font-size: 14px;
+			font-weight: 500;
+			border: 1px solid #D1D7E4;
+			border-left: none;
+		}
+	}

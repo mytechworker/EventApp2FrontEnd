@@ -1,0 +1,152 @@
+	$outlineColors: (outline-default: (#000,
+	        #C7CDD8,
+	        #303546,
+	        transparent,
+	        #fff,
+	    ),
+	    outline-success: (#4ed486,
+	        #4ed486,
+	        #fff,
+	        transparent,
+	        #fff,
+	    ),
+	    outline-warning: (#ff9898,
+	        #ff9898,
+	        #fff,
+	        transparent,
+	        #fff,
+	    ),
+	    outline-info: (#369fff,
+	        #369fff,
+	        #fff,
+	        transparent,
+	        #fff,
+	    ));
+	$colors: (default: (#5a8fbb,
+	        #4a6fbb,
+	        #fff,
+	        transparent),
+	    success: (#4ed486,
+	        #44b975,
+	        #fff,
+	        transparent),
+	    warning: (#e34b23,
+	        #de5454,
+	        #fff,
+	        transparent),
+	    info: (#2889FC,
+	        #1074EB,
+	        #fff,
+	        transparent));
+
+	.c-button {
+	    display: inline-flex;
+	    align-items: center;
+	    padding: 15px 60px;
+	    text-decoration: none;
+	    text-align: center;
+	    font-size: 14px;
+	    line-height: 14px;
+	    font-weight: 500;
+	    text-transform: uppercase;
+	    justify-content: center;
+	    outline: none;
+	    width: auto;
+	    transition: all 0.3s ease;
+	    border: none;
+	    background: transparent;
+	    font-family: 'Red Hat Display', sans-serif;
+	    box-shadow: unset;
+
+	    @include respond-to(max767) {
+	        padding: 15px 37px;
+	    }
+
+	    &.w-100 {
+	        width: 100%;
+	    }
+
+	    &:hover {
+	        cursor: pointer;
+	    }
+
+	    &:active,
+	    &:focus {
+	        outline: none;
+	        box-shadow: unset;
+	    }
+
+	    &--xs {
+	        line-height: 12px;
+	        font-size: 10px;
+	        padding: 5px 30px;
+	    }
+
+	    &--sm {
+	        line-height: 20px;
+	        font-size: 13px;
+	        padding: 8px 40px;
+	    }
+
+	    &--md {
+	        line-height: 45px;
+	        font-size: 14px;
+	    }
+
+	    &--lg {
+	        line-height: 16px;
+	        font-size: 16px;
+	    }
+
+	    &--plain {
+	        padding: 0;
+	        text-decoration: none;
+	        border-bottom: none !important;
+	    }
+
+	    &--outline-default {
+	        padding: 12px 10px;
+	        text-transform: none;
+	        background: transparent;
+	    }
+
+	    &--disabled {
+	        pointer-events: none;
+	        opacity: 0.6;
+	        color: #909DB1;
+	    }
+
+	    @each $variant,
+	    $colorSet in $outlineColors {
+	        &--#{$variant} {
+	            background: nth($colorSet, 4);
+	            border: 1px solid nth($colorSet, 2);
+	            color: nth($colorSet, 1);
+
+	            &:hover {
+	                background: nth($colorSet, 2);
+	                color: nth($colorSet, 5);
+	                border: 1px solid nth($colorSet, 1);
+	                /*svg {
+						path {
+							fill: #fff;
+						}
+					}*/
+	            }
+	        }
+	    }
+
+	    @each $variant,
+	    $colorSet in $colors {
+	        &--#{$variant} {
+	            background: nth($colorSet, 1);
+	            border: 2px solid nth($colorSet, 1);
+	            color: #fff;
+
+	            &:hover {
+	                background: nth($colorSet, 2);
+	                border-color: nth($colorSet, 2);
+	            }
+	        }
+	    }
+	}
