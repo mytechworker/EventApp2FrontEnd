@@ -1,0 +1,42 @@
+.form-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&__column {
+			width: calc(50% - 15px);
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+    &__buttons {
+      .btn-cancel {
+        margin-right: 20px;
+      }
+    }
+		.group-intro{
+			color: #909DB1;
+		}
+
+    @include respond-to(max480) {
+
+      &__buttons {
+        flex-direction: column;
+        display: flex;
+
+        .c-button {
+          height: 48px;
+          letter-spacing: 0.8px;
+          font-size: 14px;
+        }
+
+        .btn-cancel {
+          margin-right: 0;
+          margin-top: 15px;
+          order: 1;
+        }
+      }
+
+    }
+
+	}

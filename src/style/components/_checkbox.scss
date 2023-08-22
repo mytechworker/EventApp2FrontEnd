@@ -1,0 +1,126 @@
+
+	.checkbox {
+		display: inline-flex;
+		overflow: hidden;
+
+		input[type="checkbox"] {
+			display: none;
+			& + label {
+				height: auto;
+				width: auto;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+				position: relative;
+				padding: 4px 0 0 27px;
+				min-height: 20px;
+				font-weight: 400;
+				color: #909DB1;
+				font-size: 12px;
+				line-height: 14px;
+				color: rgba(45, 45, 45, 0.8);
+				&:hover {
+					cursor: pointer;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				&:before {
+					content: "";
+					display: block;
+					width: 16px;
+					height: 16px;
+					background: transparent;
+					position: absolute;
+					border-radius: 2px;
+					border: 2px solid #DAD6EF;
+					left: 0;
+					top: 0;
+					-webkit-transition: all 0.12s, border-color 0.08s;
+					transition: all 0.12s, border-color 0.08s;
+					z-index: 1;
+				}
+
+				&:after {
+					content: "";
+					display: none;
+					position: absolute;
+					width: 17px;
+					height: 13px;
+					left: 2px;
+					top: 10px;
+					-webkit-transition: all 0.12s, border-color 0.08s;
+					transition: all 0.12s, border-color 0.08s;
+					transform: translateY(-50%);
+					background: url("../../assets/svg/checked.svg") no-repeat center center;
+					background-size: 100% 100%;
+					z-index: 2;
+				}
+			}
+
+			&.circle {
+				& + label {
+					&:before,
+					&:after {
+						border-radius: 100%;
+					}
+				}
+			}
+
+			&:checked + label {
+				&:before {
+					border: 2px solid #2889FC;
+					background: #2889FC;
+				}
+
+				&:after {
+					display: block;
+				}
+			}
+			&.switcher {
+				padding: 0;
+				margin: 0;
+				& + label {
+					min-height: 24px;
+					padding: 0 0 0 56px;
+					font-size: 16px;
+					line-height: 16px;
+					transition: all 0.4s ease-in-out;
+					&:before {
+						height: 24px;
+						width: 44px;
+						border-radius: 14px;
+						background: #C7CDD8;
+						position: absolute;
+						border: none;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+					}
+					&:after {
+						height: 14px;
+						width: 14px;
+						position: absolute;
+						display: block;
+						box-sizing: border-box;
+						border-radius: 100%;
+						background: #fff;
+						top: 50%;
+						left: 4px;
+					}
+				}
+				&:checked + label {
+					&:before {
+						background: #1E86FF;
+					}
+					&:after {
+						left: 23px;
+					}
+				}
+			}
+
+
+		}
+	}

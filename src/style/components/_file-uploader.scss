@@ -1,0 +1,17 @@
+	.upload-progress {
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		font-size: 64px;
+		color: #369fff;
+		z-index: 9999;
+	}
+
+	.custom-file-input {
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+		position: fixed;
+		top: -100px;
+		right: -100px;
+	}

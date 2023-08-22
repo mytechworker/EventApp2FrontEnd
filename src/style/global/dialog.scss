@@ -1,0 +1,151 @@
+.confirm-dialog {
+
+  background: rgba(0, 0, 0, 0.7);
+
+  .vc-container {
+    border-radius: 10px;
+    width: 440px;
+
+    padding-left: 70px;
+    padding-right: 70px;
+
+    .vc-text-grid {
+
+      padding-top: 34px;
+
+      .vc-title {
+        font-weight: 600;
+        font-size: 24px;
+      }
+      
+      .vc-text {
+        font-size: 16px;
+      }
+    }
+
+    .vc-btn-grid {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      border: 0;
+      border-radius: 0;
+      padding-top: 16px;
+      padding-bottom: 34px;
+
+      button {
+        border: 0;
+        margin: 0 12px;
+        transition: .2s;
+        font-family: "Red Hat Display", sans-serif;
+        width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 13px;
+        min-height: 40px;
+        border-radius: 4px;
+        font-weight: 500;
+
+        &:nth-child(1) {
+          background: transparent;
+          border: 1px solid #369fff;
+          color: #369fff;
+
+          &:hover {
+            background: #369fff;
+            color: white;
+          }
+        }
+
+        &:nth-child(2) {
+          background: #ED4967;
+          border: solid 1px #ED4967;
+          color: white;
+
+          &:hover {
+            background: #e23857;
+          }
+        }
+      }
+    }
+  }
+
+  &.new-design {
+
+    .vc-container {
+      padding-left: 30px;
+      padding-right: 30px;
+
+      .vc-text-grid {
+
+        .vc-title {
+          color: #303546;
+        }
+
+        .vc-text {
+          color: #909DB1;
+          text-align: left;
+          font-weight: 400;
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 15px;
+        }
+      }
+
+      .vc-btn-grid {
+        justify-content: space-between;
+
+        button {
+
+          &:nth-child(2) {
+           background-color: #2889FC;
+            border: 0;
+            width: 100%;
+            max-width: 248px;
+
+            &:hover {
+              background-color: #1074EB;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  @media (max-width: 576px) {
+    .vc-container {
+      border-radius: 0;
+      height: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .vc-text-grid {
+        padding: 0 0 6px;
+      }
+
+      .vc-btn-grid {
+        padding-bottom: 0;
+        padding-top: 6px;
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          max-width: 100% !important;
+          margin: 10px 0 0;
+          height: 48px;
+
+          &:nth-child(2) {
+            order: -1;
+          }
+        }
+      }
+    }
+  }
+  
+}
